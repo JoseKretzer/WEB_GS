@@ -1,0 +1,225 @@
+:root {
+    --text-color: #000;
+    --text-color2: #fff;
+    --main-color: yellow;
+    --second-color: #effd5f;
+    --bg-color: #109bad;
+    --bg-color2: #b0ffd5;
+    --bg-color3: linear-gradient(to left, #000137, aqua, pink);
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: #178acc;
+}
+
+header {
+    background: #178acc;
+    color: #5f3005;
+    padding: 1rem 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+nav .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #000763 ;
+}
+
+.toggle-checkbox {
+    display: none;
+}
+
+.toggle-label {
+    width: 30px;
+    height: 20px;
+    background: transparent;
+    border: none;
+    position: relative;
+    cursor: pointer;
+}
+
+.toggle-label::after,
+.toggle-label::before {
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: var(--text-color2);
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+.toggle-label::before {
+    transition: transform 0.3s ease;
+}
+
+.toggle-checkbox:checked + .toggle-label::before {
+    transform: translateY(-50%) rotate(-45deg);
+}
+
+.menu-items {
+    display: none;
+    list-style: none;
+    padding: 0;
+}
+
+.menu-items li {
+    margin: 0 0.5rem;
+}
+
+.menu-items li a {
+    color: var(--text-color2);
+    text-decoration: none;
+}
+
+.toggle-checkbox:checked ~ .menu-items {
+    display: block;
+}
+
+#banner {
+    width: 100%;
+    text-align: center;
+}
+
+#banner img {
+    width: 100%;
+    border-radius: 10%;
+    display: block;
+    margin: 0 auto;
+}
+
+
+@media (min-width: 600px) {
+    nav ul {
+        display: flex;
+    }
+
+    .menu-items {
+        display: flex !important;
+    }
+
+    .menu-items li {
+        margin: 0 1rem;
+    }
+}
+
+
+@media (min-width: 900px) {
+    nav ul li {
+        margin: 0 1rem;
+    }
+}
+
+
+section {
+    padding: 20px;
+    text-align: center;
+}
+
+section h2 {
+    margin-top: 0;
+}
+
+section h3 {
+    margin-bottom: 0;
+}
+
+img {
+    max-width: 100%;
+    border-radius: 10%;
+    display: block;
+    margin: 0 auto;
+}
+
+#p1,
+#p2,
+#p3,
+#p4,
+#p5,
+#p6 {
+    margin-top: 90px;
+}
+
+#img1 {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    padding-top: 50px;
+}
+
+#Pergunta1,
+#Pergunta2,
+#Pergunta3,
+#Pergunta4,
+#Pergunta5,
+#Pergunta6 {
+    width: 100%;
+    max-width: 580px;
+    margin: 0 auto;
+    padding-top: -200%;
+}
+
+#contato {
+    margin-top: 70px;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+.info-titulo {
+    margin-bottom: 50px;
+    font-size: 2.2rem;
+    background-image: var(--bg-color3);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#email {
+    width: 350px;
+    height: 40px;
+    padding: 1rem;
+    border: 1px solid var(--second-color);
+    border-radius: 24px;
+    color: var(--bg-color);
+}
+
+.info-email::placeholder {
+    color: var(--bg-color);
+    padding: -15px;
+    padding-left: 25px;
+    background: url('../assets/email.svg') no-repeat;
+}
+
+.mensagem {
+    color: var(--second-color);
+    font-size: 25px;
+}
+
+.mensagem.hidden {
+    display: none;
+}
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
